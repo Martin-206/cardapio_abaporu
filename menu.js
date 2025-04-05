@@ -80,10 +80,15 @@ const menuContainer = document.getElementById('menu');
 for (const [section, data] of Object.entries(menuData)) {
   const sectionDiv = document.createElement('div');
   sectionDiv.className = 'section';
+  // Establece la imagen de fondo
   sectionDiv.style.backgroundImage = `url(${data.background})`;
   sectionDiv.style.backgroundSize = 'auto 80%'; // Ajusta la imagen al 80% de la altura de la sección
   sectionDiv.style.backgroundPosition = 'center'; // Centra la imagen
   sectionDiv.style.backgroundRepeat = 'no-repeat'; // Asegura que la imagen no se repita
+
+  // Agrega una capa de color con transparencia sobre la imagen
+  sectionDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'; // Color blanco con 50% de transparencia
+  sectionDiv.style.backgroundBlendMode = 'overlay'; // Mezcla la imagen de fondo con el color
 
   const heading = document.createElement('h2');
   heading.textContent = section;

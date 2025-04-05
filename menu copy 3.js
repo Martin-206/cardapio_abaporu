@@ -1,6 +1,6 @@
 
 const menuData = {
-  "CAFÉ": [
+  "CAFÉ": { items: [
     { nome: "Café Expresso", preco: "R$ 8" },
     { nome: "Café Cortado", preco: "R$ 8" },
     { nome: "Longo", preco: "R$ 10" },
@@ -10,8 +10,8 @@ const menuData = {
     { nome: "Mocaccino", preco: "R$ 14" },
     { nome: "Chococcino", preco: "R$ 14" },
     { nome: "Fatia de Bolo", preco: "R$ 20" }
-  ],
-  "CERVEJA": [
+  ], background: 'img/cafe.png' },
+  "CERVEJA": { items: [
     { nome: "Lata - Brahma / Skol / Opa", preco: "R$ 8" },
     { nome: "Lata - Bohemia / Original / Amstel", preco: "R$ 9" },
     { nome: "Lata - Budweiser / Spaten", preco: "R$ 9" },
@@ -23,8 +23,8 @@ const menuData = {
     { nome: "Garrafa 600 ml - Opa Lager Premium", preco: "R$ 18" },
     { nome: "Artesanal - Pilsen AL 'Fero'", preco: "R$ 12" },
     { nome: "Artesanal - IPA AL 'Fero'", preco: "R$ 15" }
-  ],
-  "DRINKS": [
+  ], background: 'img/cerveja.png' },
+  "DRINKS": { items: [
     { nome: "Caipirinha", preco: "R$ 20" },
     { nome: "Caipirinha Vodka", preco: "R$ 25" },
     { nome: "Fernet com Coca", preco: "R$ 25" },
@@ -34,16 +34,16 @@ const menuData = {
     { nome: "Piña Colada", preco: "R$ 29" },
     { nome: "Campari Tônica", preco: "R$ 29" },
     { nome: "Campari com Laranja", preco: "R$ 29" }
-  ],
-  "BEBIDAS SEM ÁLCOOL": [
+  ], background: 'img/drinks.png' },
+  "BEBIDAS SEM ÁLCOOL": { items: [
     { nome: "Água / Água com Gás", preco: "R$ 5" },
     { nome: "Refri Lata", preco: "R$ 8" },
     { nome: "Red Bull", preco: "R$ 14" },
     { nome: "Monster", preco: "R$ 14" },
     { nome: "Sucos Naturais 330ml", preco: "R$ 14" },
     { nome: "Licuados 330ml", preco: "R$ 18" }
-  ],
-  "PIZZAS (8 Fatias / Média / Mini)": [
+  ], background: 'img/semalcool.png' },
+  "PIZZAS (8 Fatias / Média / Mini)": { items: [
     { nome: "Mussarella", preco: "R$ 64 / R$ 36 / R$ 24" },
     { nome: "Presunto", preco: "R$ 74 / R$ 42 / R$ 29" },
     { nome: "Marguerita", preco: "R$ 74 / R$ 42 / R$ 29" },
@@ -52,42 +52,52 @@ const menuData = {
     { nome: "Portuguesa", preco: "R$ 74 / R$ 42 / R$ 29" },
     { nome: "Gorgonzola", preco: "R$ 79 / R$ 45 / R$ 34" },
     { nome: "Presunto de Parma", preco: "R$ 89 / R$ 48 / R$ 39" }
-  ],
-  "EMPANADAS / SALGADO": [
+  ], background: 'img/pizzas.png' },
+  "EMPANADAS / SALGADO": { items: [
     { nome: "Empanada Carne Picante", preco: "R$ 12" },
     { nome: "Empanada Presunto e Queijo", preco: "R$ 12" },
     { nome: "Empanada Capresse / Cebola e Queijo / Brócolis", preco: "R$ 12" },
     { nome: "Empanada Costela", preco: "R$ 14" },
     { nome: "Coxinhas Frango / Catupiri", preco: "R$ 12" },
     { nome: "Kibe Carne / Catupiri", preco: "R$ 12" }
-  ],
-  "MISTO QUENTE 15x15": [
+  ], background: 'img/salgado.png' },
+  "MISTO QUENTE 15x15": { items: [
     { nome: "Simples (Presunto / Queijo)", preco: "R$ 20" },
     { nome: "Completo (Presunto / Queijo / Tomate / Alface)", preco: "R$ 25" }
-  ],
-  "SANDUÍCHE SUPER": [
+  ], background: 'img/quente.png' },
+  "SANDUÍCHE SUPER": { items: [
     { nome: "Presunto, Queijo, Tomate, Alface", preco: "R$ 25" },
     { nome: "Salame Milano, Queijo, Tomate, Alface", preco: "R$ 25" }
-  ],
-  "VEGETARIANO": [
+  ], background: 'img/super.png' },
+  "VEGETARIANO": { items: [
     { nome: "Queijo, Tomate, Alface, Abacate, Ovo de Codorna", preco: "R$ 27" },
     { nome: "Presunto Parma, Queijo, Rúcula, Tomate Cereja", preco: "R$ 34" }
-  ]
+  ], background: 'img/vegano.png' },
 };
 
-const menuContainer = document.getElementById('menu');
 
-for (const [section, items] of Object.entries(menuData)) {
+const menuContainer = document.getElementById('menu');
+for (const [section, data] of Object.entries(menuData)) {
   const sectionDiv = document.createElement('div');
   sectionDiv.className = 'section';
+  sectionDiv.style.backgroundImage = `url(${data.background})`;
+  sectionDiv.style.backgroundSize = 'auto 80%'; // Ajusta la imagen al 80% de la altura de la sección
+  sectionDiv.style.backgroundPosition = 'center'; // Centra la imagen
+  sectionDiv.style.backgroundRepeat = 'no-repeat'; // Asegura que la imagen no se repita
+
   const heading = document.createElement('h2');
   heading.textContent = section;
   sectionDiv.appendChild(heading);
 
-  items.forEach(item => {
+  data.items.forEach(item => {
     const itemDiv = document.createElement('div');
     itemDiv.className = 'item';
-    itemDiv.innerHTML = `<span>${item.nome}</span><span>${item.preco}</span>`;
+    const itemName = document.createElement('span');
+    itemName.textContent = item.nome;
+    const itemPrice = document.createElement('span');
+    itemPrice.textContent = item.preco;
+    itemDiv.appendChild(itemName);
+    itemDiv.appendChild(itemPrice);
     sectionDiv.appendChild(itemDiv);
   });
 
