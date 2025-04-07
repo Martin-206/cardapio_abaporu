@@ -42,7 +42,7 @@ main {
 .item {
   display: flex;
   justify-content: space-between;
-  padding: 0.3rem 0;
+  padding: 0.2rem 0;
   border-bottom: 1px dashed #444;
   color: #000; /* Asegura que el texto de los items también sea negro */
 }
