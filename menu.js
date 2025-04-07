@@ -43,7 +43,8 @@ const menuData = {
     { nome: "Sucos Naturais 330ml", preco: "R$ 14" },
     { nome: "Licuados 330ml", preco: "R$ 18" }
   ], background: 'img/semalcool.png' },
-  "PIZZAS (8 Fatias / Média / Mini)": { items: [
+  "PIZZAS ": { items: [
+    { nome: " ", preco: "Fatias / Média / Mini"},
     { nome: "Mussarella", preco: "R$ 64 / R$ 36 / R$ 24" },
     { nome: "Presunto", preco: "R$ 74 / R$ 42 / R$ 29" },
     { nome: "Marguerita", preco: "R$ 74 / R$ 42 / R$ 29" },
@@ -61,17 +62,17 @@ const menuData = {
     { nome: "Coxinhas Frango / Catupiri", preco: "R$ 12" },
     { nome: "Kibe Carne / Catupiri", preco: "R$ 12" }
   ], background: 'img/salgado.png' },
-  "MISTO QUENTE 15x15": { items: [
+  "SANDWICH": { items: [
     { nome: "Simples (Presunto / Queijo)", preco: "R$ 20" },
-    { nome: "Completo (Presunto / Queijo / Tomate / Alface)", preco: "R$ 25" }
-  ], background: 'img/quente.png' },
-  "SANDUÍCHE SUPER": { items: [
-    { nome: "Presunto, Queijo, Tomate, Alface", preco: "R$ 25" },
-    { nome: "Salame Milano, Queijo, Tomate, Alface", preco: "R$ 25" }
-  ], background: 'img/super.png' },
+    { nome: "Completo (Presunto / Queijo / Tomate / Alface)", preco: "R$ 25" },
+    { nome: "SUPER P (Presunto, Queijo, Tomate, Alface)", preco: "R$ 25" },
+    { nome: "SUPER S (Salame Milano, Queijo, Tomate, Alface)", preco: "R$ 25" },
+    { nome: "Croissant (Presunto / Queijo)", preco: "R$ 25"},
+    { nome: "Croissant Compl (Parma / Queijo / Tomate /Rúcula)", preco: "R$ 35"}
+  ], background: 'img/sandwich.png' },
   "VEGETARIANO": { items: [
     { nome: "Queijo, Tomate, Alface, Abacate, Ovo de Codorna", preco: "R$ 27" },
-    { nome: "Presunto Parma, Queijo, Rúcula, Tomate Cereja", preco: "R$ 34" }
+    { nome: "Queijo, Rúcula, Tomate Cereja", preco: "R$ 34" }
   ], background: 'img/vegano.png' },
 };
 
@@ -87,7 +88,7 @@ for (const [section, data] of Object.entries(menuData)) {
   sectionDiv.style.backgroundRepeat = 'no-repeat'; // Asegura que la imagen no se repita
 
   // Agrega una capa de color con transparencia sobre la imagen
-  sectionDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'; // Color blanco con 50% de transparencia
+  sectionDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; // Color blanco con 50% de transparencia
   sectionDiv.style.backgroundBlendMode = 'overlay'; // Mezcla la imagen de fondo con el color
 
   const heading = document.createElement('h2');
