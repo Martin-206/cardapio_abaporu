@@ -44,7 +44,7 @@ const menuData = {
     { nome: "Licuados 330ml", preco: "R$ 18" }
   ], background: 'img/semalcool.png' },
   "PIZZAS ": { items: [
-    { nome: " ", preco: "Fatias / Média / Mini"},
+    { nome: " ", preco: "Grande / Média / Mini"},
     { nome: "Mussarella", preco: "R$ 64 / R$ 36 / R$ 24" },
     { nome: "Presunto", preco: "R$ 74 / R$ 42 / R$ 29" },
     { nome: "Marguerita", preco: "R$ 74 / R$ 42 / R$ 29" },
@@ -55,8 +55,9 @@ const menuData = {
     { nome: "Presunto de Parma", preco: "R$ 89 / R$ 48 / R$ 39" }
   ], background: 'img/pizzas.png' },
   "EMPANADAS / SALGADO": { items: [
-    { nome: "Empanada Carne Picante", preco: "R$ 12" },
+    { nome: "Empanada Carne Suave / Picante", preco: "R$ 12" },
     { nome: "Empanada Presunto e Queijo", preco: "R$ 12" },
+    { nome: "Empanada Frango / Frango e Requeijao", preco: "R$ 12" },
     { nome: "Empanada Capresse / Cebola e Queijo / Brócolis", preco: "R$ 12" },
     { nome: "Empanada Costela", preco: "R$ 14" },
     { nome: "Coxinhas Frango / Catupiri", preco: "R$ 12" },
