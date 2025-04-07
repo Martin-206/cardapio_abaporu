@@ -70,6 +70,12 @@ const menuData = {
     { nome: "Croissant (Presunto / Queijo)", preco: "R$ 25"},
     { nome: "Croissant Compl (Parma / Queijo / Tomate /Rúcula)", preco: "R$ 35"}
   ], background: 'img/sandwich.png' },
+  "DOCES": { items: [
+    { nome: "Bolo do doce", preco: "R$ 20" },
+    { nome: "Medialuna)", preco: "R$ 8" },
+    { nome: "Alfajor", preco: "R$ 10" },
+  
+  ], background: 'img/doce.png' },
   "VEGETARIANO": { items: [
     { nome: "Queijo, Tomate, Alface, Abacate, Ovo de Codorna", preco: "R$ 27" },
     { nome: "Queijo, Rúcula, Tomate Cereja", preco: "R$ 34" }
