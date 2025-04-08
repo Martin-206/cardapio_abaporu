@@ -76,7 +76,7 @@ const menuData = {
     { nome: "Medialuna", preco: "R$8" },
     { nome: "Alfajor", preco: "R$10" },
   
-  ], background: 'img/doce.png' },
+  ], background: 'img/doces.png' },
   "VEGETARIANO": { items: [
     { nome: "Queijo, Tomate, Alface, Ovo de Codorna", preco: "R$25" },
     { nome: "Queijo, Rúcula, Tomate Cereja", preco: "R$25" }
